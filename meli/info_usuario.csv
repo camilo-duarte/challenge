@@ -1,0 +1,6 @@
+﻿row_id, user_id, user_state, user_manager
+1,100,0,owner-1@yopmail.com
+2,101,0,owner-2@yopmail.com
+3,102,0,owner-3@yopmail.com
+4,103,0,owner-4@yopmail.com
+5,104,1,owner-5@yopmail.com

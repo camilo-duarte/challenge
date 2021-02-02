@@ -1,0 +1,58 @@
+[
+    {
+        "ID": "1",
+        "nombre_bd": "rrhh",
+        "user_id": "100",
+        "criticidad": "alta",
+        "owner": "100",
+        "tipo_usuario": "2"
+    },
+    {
+        "ID": "2",
+        "nombre_bd": "it",
+        "user_id": "101",
+        "owner": "103",
+        "tipo_usuario": "1",
+        "criticidad": "media"
+    },
+    {
+        "ID": "3",
+        "nombre_bd": "contabilidad",
+        "user_id": "102",
+        "owner": "103",
+        "tipo_usuario": "2",
+        "criticidad": "alta"
+    },
+    {
+        "ID": "4",
+        "nombre_bd": "publicidad",
+        "user_id": "103",
+        "owner": "102",
+        "tipo_usuario": "2",
+        "criticidad": "alta"
+    },
+    {
+        "ID": "5",
+        "nombre_bd": "ventas",
+        "user_id": "102",
+        "owner": "103",
+        "tipo_usuario": "1",
+        "criticidad": "baja"
+    },
+    {
+        "ID": "6",
+        "nombre_bd": "cliente",
+        "user_id": "102",
+        "owner": "105",
+        "tipo_usuario": "1",
+        "criticidad": "alta"
+    },
+    {
+        "ID": "7",
+        "nombre_bd": "proveedores",
+        "user_id": "102",
+        "owner": "103",
+        "tipo_usuario": "null",
+        "criticidad": "media"
+    }
+]

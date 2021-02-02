@@ -1,0 +1,46 @@
+#create database clasificacion_info
+
+use clasificacion_info
+
+
+CREATE TABLE tbl_tipo_usuario (
+   id_tipo_usuario INT (11),
+   tipo_usuario varchar(20) NOT NULL,
+   PRIMARY KEY(id_tipo_usuario)
+);
+
+insert into tbl_tipo_usuario (id_tipo_usuario,tipo_usuario) values (1,"manager");
+insert into tbl_tipo_usuario (id_tipo_usuario,tipo_usuario) values (2, "owner");
+
+CREATE TABLE tbl_user (
+   id_usuario int,
+   tbl_id_tipo_usuario int(11) NOT NULL,
+   owner int,
+   correo_usuario varchar(20),
+   FOREIGN KEY (tbl_id_tipo_usuario) REFERENCES tbl_tipo_usuario (id_tipo_usuario),
+   PRIMARY KEY (id_usuario)
+);
+
+insert into tbl_user (id_usuario,tbl_id_tipo_usuario,owner,correo_usuario) values ("100",1,103,"manager1@yopmail.com");
+insert into tbl_user (id_usuario,tbl_id_tipo_usuario,owner,correo_usuario) values ("101",1,104,"manager2@yopmail.com");
+insert into tbl_user (id_usuario,tbl_id_tipo_usuario,owner,correo_usuario) values ("102",1,105,"manager3@yopmail.com");
+insert into tbl_user (id_usuario,tbl_id_tipo_usuario,owner,correo_usuario) values ("103",2,103,"owner3@yopmail.com");
+insert into tbl_user (id_usuario,tbl_id_tipo_usuario,owner,correo_usuario) values ("104",2,104,"owner4@yopmail.com");
+insert into tbl_user (id_usuario,tbl_id_tipo_usuario,owner,correo_usuario) values ("105",2,105,"owner5@yopmail.com");
+
+CREATE TABLE `tb_clasificacion_info` (
+  `id_clasificacion`  int NOT NULL AUTO_INCREMENT ,
+  `nombre_bd` varchar(20) DEFAULT NULL,
+  `tbl_id_user` int(11) NOT NULL,
+   `tbl_criticidad_info` varchar(20) NOT NULL,
+    FOREIGN KEY (tbl_id_user) REFERENCES tbl_user (id_usuario),
+   PRIMARY KEY (id_clasificacion)
+);
+
+
+#insert into tb_clasificacion_info (nombre_bd,tbl_id_user,tbl_criticidad_info) values ("rrhh",1,"alta");
+#insert into tb_clasificacion_info (nombre_bd,tbl_id_user,tbl_criticidad_info) values ("IT",2,"alta");
+#insert into tb_clasificacion_info (nombre_bd,tbl_id_user,tbl_criticidad_info) values ("publicidad",2,"media");
+#insert into tb_clasificacion_info (nombre_bd,tbl_id_user,tbl_criticidad_info) values ("contabilidad",4,"baja");
+#insert into tb_clasificacion_info (nombre_bd,tbl_id_user,tbl_criticidad_info) values ("ventas",5,"alta");
+
