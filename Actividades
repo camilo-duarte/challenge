@@ -1,0 +1,42 @@
+El desarrollo de la aplicacion fue realizada de acuerdo a la informacion establecida en la prueba, correspondeinte a 
+
+Generar un programa que, a partir de los archivos dados, guarde su contenido en una base de datos y por cada registro guardado, en donde la clasificación sea alta (high), envíe un email al manager del owner pidiendo su OK respecto de la clasificación.
+
+Se espera tener una base de datos con la siguiente información almacenada:
+●	nombre de la base de datos
+●	el email del owner
+●	el email del manager
+●	la clasificacion de la misma
+
+
+Actividades realizadas
+
+descripcion de la aplicacion
+La aplicacion esta desarrollada en Python donde se esta realizando:
+ - Creacion de base de datos en mysql donde se cuenta con 3 tablas 
+        -tb_clasificacion_info: se almacena la informacion extraida del archivo BD.json
+        -tbl_user: identificacion de usuario con su correspondiente correo electronico, manager y owner
+        -tbl_tipo_usuario: tipo de usuario owner o manager
+ - inputs de archivos en formato JSON y CSV donde
+        - json: es el archivo donde se tiene informacion necesaria para la clasificacion y todos los valores deberan estar diligenciados y no tener valor NULL
+        - CSV : usuarios owner/manager de las bases de datos
+ - Programa desarrollo en python donde se cuenta con 4 archivos:
+        -validar_datos_json.py: Carga el archivo BD.json y valida que no existan valores NULL, si existen se solicitara que se actualicen dicho archivo o en su defecto ingresarlos
+        de esta forma a la BD. dicho archico hace un llamado al siguiente archivo (lecturas.py).
+        -lecturas.py: Carga los archivos json y CSV para poder cruzar un identificador del archivo csv (colunma 2) contra un Key del archivo json el cual pertenecera al usuario. posterior se gusrada en otro
+        archivo en formato json (normalizado para que el archivo insertar datos pueda cargar correctamente el archivi), posterio se realiza el llamado del archivo conexion.py
+        conexion.py: tendra la informacion necesaria para la conexion a la base de datos 
+        insertar_datos_bd.py: insertara los datos en la tabla  tb_clasificacion_info, hará una validacion de datos y donde encuentre criticidad "alta" enviara un correo al manager u owner de la aplicacion
+        segun sea el caso.
+
+Problemas 
+1.En el despliegue del Dockerfile no me funcionaba el inicio de un servicio, por lo cual lo adicione en un archivo de python.
+2.No tenia conocimiento en utilizar contenedores 
+3.No habia desarrollado en python y encontre problemas en sintaxys o en tab/espacios, 
+4.
+
+Soluciones
+1,2-Buscar en internet y hacer pequeños laboratorios para entender el funcionamiento
+3. busque en foros y documentacion de python y a pesar de que el codigo estaba bien, tenia problamas debido a que en python se maneja la tabulacion y tiene espcial manejo con espacios.
+
+
